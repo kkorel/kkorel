@@ -273,25 +273,26 @@ def header(c: Canvas, n: int, title: str, y: float = 52, x: float = PAD, right: 
 # --------------------------------------------------------------------------- panels
 def p_hero(d, theme):
     p = d["person"]
-    c = Canvas(W, theme, f"{p['name']}. {p['tagline']}")
+    tagline = p.get("tagline", "").strip()
+    c = Canvas(W, theme, f"{p['name']}. {tagline}" if tagline else p["name"])
     c.desc = " · ".join(p["meta"]) + f". LinkedIn: {p['linkedin_label']}. Email: {p['email']}."
     c.text(PAD, 50, "github.com/kkorel", "mono")
     c.text(W - PAD, 50, "Curriculum · in brief", "caps", anchor="end")
     c.line(PAD, 64, W - PAD, 64)
     c.text(PAD - 3, 136, p["name"], "name")
-    tl = wrap(p["tagline"], "tagline", 520)
-    y = c.lines(PAD, 178, tl, "tagline", 29)
+    if tagline:
+        y = c.lines(PAD, 178, wrap(tagline, "tagline", 520), "tagline", 29) + 40
+    else:
+        y = 182
 
     # Decoration: a natural-deduction rule, from proofs to production.
-    cx, top = 706, 116
+    cx, top = 706, 104 if not tagline else 116
     c.text(cx - 52, top, "proof", "rule", anchor="middle")
     c.text(cx + 52, top, "tests", "rule", anchor="middle")
     c.line(cx - 104, top + 14, cx + 104, top + 14, color="ink2", sw=1.1)
     c.text(cx + 112, top + 19, "(ship)", "caps", color="accent")
     c.text(cx, top + 44, "production", "rule", anchor="middle", color="accent")
-    c.text(cx, top + 82, "correct under load", "caps", anchor="middle")
 
-    y += 40
     meta = "  ·  ".join(p["meta"])
     c.text(PAD, y, meta, "medium", color="muted")
     y += 24

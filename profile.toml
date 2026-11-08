@@ -4,7 +4,8 @@
 
 [person]
 name = "Kuzey Korel"
-tagline = "I build systems that stay correct under pressure: trading engines, compilers, kernels and AI tools."
+# Optional one-liner under the name; leave empty to show none.
+tagline = ""
 meta = [
   "MEng Mathematics & Computer Science, Imperial",
   "Amazon SDE Intern 2026, return offer",
