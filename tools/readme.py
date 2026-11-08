@@ -48,7 +48,7 @@ def build():
     parts += [
         pic('systems', 'Built from scratch: ' + '; '.join(f'{x[1]}: {x[2]}' for x in P.SYSTEMS)),
         pic('achievements', 'Achievements: ' + '; '.join(f'{x[1]}, {x[2]}' for x in P.ACHIEVEMENTS)),
-        pic('leadership', 'Leadership and more: ' + '; '.join(f'{x[1]}: {x[2]}' for x in P.LEADERSHIP)),
+        pic('leadership', P.LEADERSHIP_TITLE.capitalize() + ': ' + '; '.join(f'{x[1]}: {x[2]}' for x in P.LEADERSHIP)),
         pic('stack', 'Stack: ' + ', '.join(ids for _, ids in P.STACK)),
     ]
     for i, (_, kicker, title, text, url) in enumerate(P.SIDE):

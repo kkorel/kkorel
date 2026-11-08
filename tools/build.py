@@ -571,10 +571,10 @@ def leadership(theme):
     rows = math.ceil(len(cells) / cols)
     row_h = [max(64 + len(c[2]) * 23 for c in cells[r * cols:(r + 1) * cols]) + 24 for r in range(rows)]
     H = 112 + sum(row_h) + 8
-    s = Svg(W, H, theme, 'Leadership and more: ' + '; '.join(f'{a}: {b}' for _, a, b in P.LEADERSHIP))
+    s = Svg(W, H, theme, P.LEADERSHIP_TITLE.capitalize() + ': ' + '; '.join(f'{a}: {b}' for _, a, b in P.LEADERSHIP))
     t = s.t
     s.panel()
-    header(s, 'LEADERSHIP & MORE')
+    header(s, P.LEADERSHIP_TITLE)
     y = 116
     for r in range(rows):
         for c in range(cols):
