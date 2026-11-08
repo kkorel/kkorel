@@ -1,0 +1,170 @@
+# All profile content lives here. Edit this file, then run:
+#   python3 tools/build.py
+# to regenerate every SVG in assets/ (light + dark) and README.md.
+
+[person]
+name = "Kuzey Korel"
+tagline = "I build systems that stay correct under pressure: trading engines, compilers, kernels and AI tools."
+meta = [
+  "MEng Mathematics & Computer Science, Imperial",
+  "Amazon SDE Intern 2026, return offer",
+  "London",
+]
+linkedin = "https://www.linkedin.com/in/kuzeykorel/"
+linkedin_label = "in/kuzeykorel"
+email = "kuzey.korel24@imperial.ac.uk"
+
+# ---------------------------------------------------------------------------
+[highlights]
+title = "Highlights"
+items = [
+  { big = "Amazon", label = "SDE internship", sub = "Return offer, 2026" },
+  { big = "1st / 55", label = "Amadeus Award", sub = "Best 2nd-year group project" },
+  { big = "2nd", label = "IC Hack 2026", sub = "Europe's largest student hackathon" },
+  { big = "2nd / 86", label = "QRT Quant Challenge", sub = "University teams, 2025" },
+]
+
+# ---------------------------------------------------------------------------
+[now]
+title = "Now"
+items = [
+  { role = "Research Engineer", where = "Oorja", note = "Peer-to-peer solar energy trading on India's Digital Energy Grid pilot" },
+  { role = "Treasurer & Head of Lectures", where = "Imperial AI Society", note = "Weekly ML lectures to 150 students, every model live-coded" },
+  { role = "Year 3, MEng Maths & CS", where = "Imperial College London", note = "Year 2: First Class Honours" },
+]
+
+# ---------------------------------------------------------------------------
+[experience]
+title = "Experience"
+items = [
+  { when = "Jul – Sep 2026", role = "Software Development Engineer Intern", where = "Amazon · Prime Video", tag = "Return offer" },
+  { when = "Jan 2026 – now", role = "Research Engineer", where = "Oorja · P2P energy trading", tag = "" },
+  { when = "2024 – 2028", role = "MEng Mathematics & Computer Science", where = "Imperial College London", tag = "First Class, Y2" },
+  { when = "Jun – Jul 2024", role = "Software Engineering Intern", where = "Tyres Life UK", tag = "" },
+  { when = "2022 – 2024", role = "A-levels: Maths A*, Further Maths A*, Physics A", where = "King's College London Mathematics School", tag = "" },
+]
+
+# ---------------------------------------------------------------------------
+[impact]
+title = "Amazon · Prime Video"
+subtitle = "An end-to-end TypeScript tool that audits every latency alarm in Prime Video's Apple fleet, recommends thresholds from each metric's own history and backtests them over weeks of real data."
+stats = [
+  { big = "1,991", label = "latency alarms audited" },
+  { big = "700+", label = "could never fire" },
+  { big = "74%", label = "of fired alerts were false alarms (approx.)" },
+  { big = "Daily", label = "fleet-wide run, feeding a live dashboard" },
+]
+notes = [
+  "On-call ticket bot: when an alarm pages, it re-audits and comments recommended thresholds before the engineer opens the ticket",
+  "Stays inside AWS Lambda limits with a per-segment rolling metric cache in S3, seeded by a sharded Step Functions backfill",
+]
+
+# ---------------------------------------------------------------------------
+[work]
+title = "Selected work"
+
+[work.feature]
+name = "Peer-to-peer energy trading"
+org = "Oorja · Beckn protocol"
+url = "https://github.com/kkorel/p2p-trading"
+summary = "Built and deployed a platform where households trade rooftop solar directly, on India's Digital Energy Grid pilot. Showcased at the India AI Impact Summit 2026."
+points = [
+  "Order placement that cannot oversell under concurrent buyers: row-level locks inside a Redis lock",
+  "Order matcher that fills across sellers ranked by price, trust and delivery window",
+  "Reputation tiers that raise a seller's trade limit from 10% to 100%",
+  "Settlement for partial delivery; seller capacity verified from signed credentials",
+]
+stack = ["TypeScript", "Next.js", "PostgreSQL", "Redis", "Prisma", "Docker"]
+
+[[work.cards]]
+slug = "fair"
+name = "Fair Companion"
+tag = "~1,200 users"
+url = ""
+summary = "Helped about 1,200 students find societies at Imperial's Welcome Fair, even with no signal."
+points = [
+  "Offline-first: service worker generated from the build, size budgets enforced at build time",
+  "AI assistant limited to the app's own society list, with per-device, per-network and global caps",
+]
+stack = ["Next.js", "TypeScript", "Cloudflare"]
+
+[[work.cards]]
+slug = "clam"
+name = "CLAM"
+tag = "2nd · IC Hack 2026"
+url = "https://github.com/kkorel/CLAM-IC-HACK-2026"
+summary = "A Bash assistant that turns a half-typed command or plain-English request into runnable shell commands."
+points = [
+  "Wraps rm, dd and 7 other risky commands so an LLM vets each call before it runs",
+  "Works with cloud or local models",
+]
+stack = ["Bash", "LLMs"]
+
+[[work.cards]]
+slug = "alongside"
+name = "Alongside"
+tag = "Amadeus Award 2026"
+url = "https://github.com/aryan-the-jain/DRP_07"
+summary = "Facilitated peer-support groups for bereaved young adults. Best of 55 second-year group projects at Imperial."
+points = [
+  "Group room, private line to the facilitator, quiet space and facilitator dashboard",
+]
+stack = ["Next.js", "Scala Play", "PostgreSQL"]
+
+[[work.cards]]
+slug = "pathfinder"
+name = "Pathfinder"
+tag = "IC Hack 2025"
+url = "https://github.com/kkorel/Pathfinder-IC-HACK-2025"
+summary = "Turns a decision you are weighing into a branching tree of clarifying questions and likely futures, generated by Claude."
+points = [
+  "Every node keeps its own URL; the full path is replayed to the model at each step",
+]
+stack = ["Next.js 15", "React 19", "PostgreSQL"]
+
+# ---------------------------------------------------------------------------
+[systems]
+title = "Built from scratch"
+items = [
+  { name = "WACC compiler", lang = "Scala 3 → x86-64", detail = "Parser-combinator frontend, typed AST, two-stage IR backend, a type checker that reports every error at once.", proof = "180+ tests pass" },
+  { name = "PintOS kernel", lang = "C", detail = "Priority scheduling with recursive donation across lock chains, a fixed-point 4.4BSD MLFQS, a 13-syscall dispatcher.", proof = "116 / 116 tests" },
+  { name = "ARMv8 toolchain", lang = "C", detail = "Two-pass assembler and fetch-decode-execute emulator for AArch64, with a sample program that drives Raspberry Pi GPIO.", proof = "No deps beyond libc" },
+  { name = "Transformer, by hand", lang = "NumPy", detail = "Live-coded for AI Society lectures, building up from an MLP in PyTorch to a transformer with no framework.", proof = "Taught to 150" },
+]
+
+# ---------------------------------------------------------------------------
+[maths]
+title = "Mathematics"
+items = [
+  { big = "Gold", label = "Cayley Olympiad", sub = "Top 20 of 100,000+ entrants" },
+  { big = "Distinction", label = "British Maths Olympiad", sub = "Round 1" },
+  { big = "Grade 1", label = "STEP II", sub = "MAT 84/100 · TMUA 8.4/9 (top 2%)" },
+  { big = "6 years", label = "UKMT Challenge Gold", sub = "Best in School every year" },
+]
+
+# ---------------------------------------------------------------------------
+[stack]
+title = "Toolbox"
+groups = [
+  { name = "Languages", items = ["Python", "C", "C++", "TypeScript", "Scala", "Kotlin", "Java", "Haskell", "SQL", "Bash", "x86-64"] },
+  { name = "ML & data", items = ["PyTorch", "scikit-learn", "NumPy", "pandas", "XGBoost", "LightGBM", "TensorFlow"] },
+  { name = "Web & data stores", items = ["Node.js", "React", "Next.js", "PostgreSQL", "Redis", "REST", "GitHub Actions"] },
+  { name = "Cloud & systems", items = ["AWS Lambda", "Step Functions", "S3", "CloudWatch", "CDK", "Docker", "Linux", "GDB", "Valgrind"] },
+]
+
+# ---------------------------------------------------------------------------
+[beyond]
+title = "Off the keyboard"
+items = [
+  { name = "Piano", detail = "ABRSM Grade 8" },
+  { name = "Salsa", detail = "Imperial Salsa Team" },
+  { name = "Teaching", detail = "Maths tutor for 5 years" },
+  { name = "Games", detail = "Chess and poker" },
+  { name = "Heights", detail = "Climbing and skydiving" },
+]
+
+[side]
+title = "Self-study"
+name = "Harvard CS50 AI"
+url = "https://github.com/kkorel/Harvard-CS50-AI-Projects"
+detail = "12 projects: minimax, CSPs, Bayesian networks, Q-learning, a traffic-sign CNN and BERT attention maps."
