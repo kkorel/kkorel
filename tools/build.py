@@ -219,7 +219,8 @@ class Canvas:
             opts.layout_features = ["kern", "liga", "tnum", "lnum"]
             opts.name_IDs = []
             opts.notdef_outline = True
-            font = TTFont(F[fk].path)
+            # recalcTimestamp=False keeps output byte-identical between builds.
+            font = TTFont(F[fk].path, recalcTimestamp=False)
             sub = subset.Subsetter(opts)
             sub.populate(text="".join(sorted(chars)) + " ")
             sub.subset(font)
