@@ -38,7 +38,10 @@ def build():
         pic('impact', P.IMPACT['title'].title() + ': ' + '; '.join(' '.join(x) for x in P.IMPACT['stats'])),
     ]
     if getattr(P, 'YEAR_PERIODS', None):
-        parts.append(pic('year', 'Year in work'))
+        import datetime as dt
+        first = dt.date(*P.YEAR_START)
+        parts.append(pic('year', f'Work since {first:%B %Y}, real commits plus estimated private work. ' + '. '.join(
+            f'{lane}: ' + ', '.join(item[2] for item in items) for lane, items in P.YEAR_TRACKS)))
     parts.append(pic('label-work', 'Selected work'))
     for a, b in zip(keys[0::2], keys[1::2]):
         parts.append('<p>' + card(a) + '&nbsp;' + card(b) + '</p>')

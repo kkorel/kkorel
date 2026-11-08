@@ -740,8 +740,7 @@ def year(theme):
 
     # Legend and note
     ly = H - 30
-    note = ('GitHub and Imperial GitLab days are exact. Sarvam and Bending Spoons work is estimated.' if gitlab
-            else 'Public GitHub days are exact. Private work (Sarvam, Imperial GitLab, Bending Spoons) is estimated.')
+    note = P.YEAR_NOTE_GITLAB if gitlab else P.YEAR_NOTE
     s.text(48, ly, note, 'r', 14, t['muted'])
     lx = W - 48 - 5 * (14 + 4) - measure('More', 'mono', 12)
     s.text(lx - 10 - 0, ly, 'Less', 'mono', 12, t['muted'], 'end')
