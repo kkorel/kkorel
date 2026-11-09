@@ -18,7 +18,7 @@ HIGHLIGHTS = [
 ]
 
 NOW_ITEMS = [
-    ('agents', 'Research Engineer · Oorja',
+    ('agents', 'Research Engineer · Stealth',
      'Researching a governance layer for multi-agent systems: permissions, escalation and audit trails, so they '
      "don't fail through diffused responsibility, missed escalation or compounding errors.", None),
     ('people', 'Treasurer & Head of Lectures, Imperial AI Society',
@@ -29,7 +29,7 @@ NOW_ITEMS = [
 # (logo file or glyph, organisation, role, start (y, m), end (y, m) or None for ongoing, kind)
 EXPERIENCE = [
     ('glyph:box', 'Amazon · Prime Video', 'Software Development Engineer Intern', (2026, 7), (2026, 9), 'work'),
-    ('glyph:bolt', 'Oorja', 'Research Engineer, peer-to-peer energy trading', (2026, 1), None, 'work'),
+    ('glyph:bolt', 'Stealth startup', 'Research Engineer, peer-to-peer energy trading', (2026, 1), None, 'work'),
     ('imperial', 'Imperial College London', 'MEng Mathematics and Computer Science', (2024, 10), None, 'study'),
     ('glyph:tyre', 'Tyres Life UK', 'Software Engineering Intern', (2024, 6), (2024, 7), 'work'),
     ('glyph:sigma', "KCL Mathematics School",'A-levels: Maths A*, Further Maths A*, Physics A',
@@ -61,7 +61,7 @@ PROJECTS = {
     'p2p': {
         'icon': 'glyph:bolt',
         'title': 'P2P energy trading',
-        'badge': 'OORJA  ·  INDIA AI IMPACT SUMMIT',
+        'badge': 'STEALTH  ·  INDIA AI IMPACT SUMMIT',
         'text': "Households trade rooftop solar directly on India's Digital Energy Grid pilot. I built the trading core: "
                 'no overselling under concurrent buyers, partial-delivery settlement, trust tiers and the order matcher.',
         'tags': ['TypeScript', 'Beckn', 'Redis'],
@@ -152,10 +152,10 @@ YEAR_TRACKS = [
     ('MAIN', [((2025, 10, 13), (2025, 11, 28), 'PintOS · term 1'), ((2026, 1, 12), (2026, 3, 20), 'WACC compiler'),
               ((2026, 4, 27), (2026, 6, 19), 'Alongside · DRP'), ((2026, 7, 6), (2026, 9, 25), 'Amazon · Prime Video'),
               ((2026, 10, 5), (2026, 11, 8), 'Year 3')]),
-    ('ALONGSIDE', [((2026, 1, 10), (2026, 3, 20), 'Oorja P2P trading + CLAM'),
+    ('ALONGSIDE', [((2026, 1, 10), (2026, 3, 20), 'P2P trading + CLAM'),
                    ((2026, 4, 27), (2026, 6, 20), 'Coursework + exams'),
                    ((2026, 8, 1), (2026, 9, 25), 'Fair Companion'),
-                   ((2026, 10, 5), (2026, 11, 8), 'Oorja + lectures')]),
+                   ((2026, 10, 5), (2026, 11, 8), 'Research + lectures')]),
 ]
 
 # Small linked rows at the end: (glyph, label, title, text, url)
