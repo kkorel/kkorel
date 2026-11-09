@@ -1,4 +1,4 @@
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kkorel/kkorel/main/assets/hero-dark.svg"><img src="https://raw.githubusercontent.com/kkorel/kkorel/main/assets/hero-light.svg" alt="Kuzey Korel. Research engineer at Oorja. Previously SDE intern at Amazon, with a return offer. MENG MATHS &amp; CS · FIRST-CLASS · IMPERIAL COLLEGE LONDON. LinkedIn: kuzeykorel. Email: kuzey.korel24@imperial.ac.uk."></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kkorel/kkorel/main/assets/hero-dark.svg"><img src="https://raw.githubusercontent.com/kkorel/kkorel/main/assets/hero-light.svg" alt="Kuzey Korel. Engineering AI and distributed systems the real world can depend on. MENG MATHS &amp; CS · FIRST-CLASS · IMPERIAL COLLEGE LONDON. LinkedIn: kuzeykorel. Email: kuzey.korel24@imperial.ac.uk."></picture>
 
 <p><a href="https://www.linkedin.com/in/kuzeykorel/">LinkedIn</a> &nbsp;·&nbsp; <a href="mailto:kuzey.korel24@imperial.ac.uk">kuzey.korel24@imperial.ac.uk</a></p>
 

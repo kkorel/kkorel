@@ -202,10 +202,11 @@ def save(name, theme, svg):
 # --------------------------------------------------------------------------- hero
 
 def hero(theme):
-    lines = wrap(P.TAGLINE, 'r', 27, 620) if P.TAGLINE else []
+    # A '\n' in the tagline forces a line break; each part still wraps at 620px.
+    lines = [ln for part in P.TAGLINE.split('\n') for ln in wrap(part, 'r', 27, 620)] if P.TAGLINE else []
     contacts_y = 346 if lines else 254
     W, H = 1280, contacts_y + 94
-    s = Svg(W, H, theme, f'{P.NAME}: {P.TAGLINE}' if P.TAGLINE else P.NAME)
+    s = Svg(W, H, theme, f'{P.NAME}: {" ".join(P.TAGLINE.split())}' if P.TAGLINE else P.NAME)
     t = s.t
     s.css.append(FADE_CSS)
     s.css.append('@keyframes breathe{50%{opacity:.25}}.n{animation:breathe 4s ease-in-out infinite}'

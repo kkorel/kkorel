@@ -27,7 +27,8 @@ def build():
         return link(d.get('url'), pic(f'card-{k}', f'{d["title"]}: {d["text"]}', '49%'))
 
     keys = list(P.PROJECTS)
-    contacts = (f'{P.NAME}. ' + (f'{P.TAGLINE} ' if P.TAGLINE else '') + ' · '.join(P.KICKER.split('  ·  '))
+    tagline = ' '.join(P.TAGLINE.split())
+    contacts = (f'{P.NAME}. ' + (f'{tagline} ' if tagline else '') + ' · '.join(P.KICKER.split('  ·  '))
                 + f'. LinkedIn: {P.CONTACTS[0][1]}. Email: {P.EMAIL}.')
     parts = [
         pic('hero', contacts),

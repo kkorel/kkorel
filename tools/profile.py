@@ -2,7 +2,7 @@
 
 NAME = 'Kuzey Korel'
 KICKER = 'MENG MATHS & CS  ·  FIRST-CLASS  ·  IMPERIAL COLLEGE LONDON'
-TAGLINE = 'Research engineer at Oorja. Previously SDE intern at Amazon, with a return offer.'  # '' for none
+TAGLINE = 'Engineering AI and distributed systems\nthe real world can depend on.'  # '\n' = line break; '' for none
 # Contact row along the bottom of the hero: (glyph, text)
 CONTACTS = [('linkedin', 'kuzeykorel'), ('mail', 'kuzey.korel24@imperial.ac.uk')]
 LINKEDIN = 'https://www.linkedin.com/in/kuzeykorel/'
